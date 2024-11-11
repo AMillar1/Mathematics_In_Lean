@@ -38,7 +38,7 @@ example : ∀ m n : Nat, Even n → Even (m * n) :=
 fun m n ⟨k, hk⟩ ↦ ⟨m * k, by rw [hk, mul_add]⟩
 
 example : ∀ m n : Nat, Even n → Even (m * n) := by
-  -- Say `m` and `n` are natural numbers, and assume `n = 2 * k`.
+  -- Say `m` and `n` a  re natural numbers, and assume `n = 2 * k`.
   rintro m n ⟨k, hk⟩
   -- We need to prove `m * n` is twice a natural number. Let's show it's twice `m * k`.
   use m * k
@@ -52,4 +52,3 @@ example : ∀ m n : Nat, Even n → Even (m * n) := by
 
 example : ∀ m n : Nat, Even n → Even (m * n) := by
   intros; simp [*, parity_simps]
-
